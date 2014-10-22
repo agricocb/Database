@@ -23,10 +23,10 @@ GDAL=$(PWD)/gdal
 all: BarreForestGuide.sqlite
 
 gdal-1.11.1.tar.gz:
-	wget "http://download.osgeo.org/gdal/1.11.1/gdal-1.11.1.tar.gz"
+	curl -O "http://download.osgeo.org/gdal/1.11.1/gdal-1.11.1.tar.gz"
 
 proj-4.8.0.tar.gz:
-	wget "http://download.osgeo.org/proj/proj-4.8.0.tar.gz"
+	curl -O "http://download.osgeo.org/proj/proj-4.8.0.tar.gz"
 
 $(GDAL)/bin/ogr2ogr: gdal-1.11.1.tar.gz proj-4.8.0.tar.gz
 	tar -xvzf proj-4.8.0.tar.gz
@@ -39,7 +39,7 @@ $(GDAL)/bin/ogr2ogr: gdal-1.11.1.tar.gz proj-4.8.0.tar.gz
 
 MillstoneTrails.kml: MillstoneTrailsData.zip $(GDAL)/bin/ogr2ogr
 	unzip MillstoneTrailsData.zip
-	(LD_LIBRARY_PATH=$(GDAL)/lib $(GDAL)/bin/ogr2ogr -f KML $@ MillstoneTrails/Trails_polyline.shp)
+	(LD_LIBRARY_PATH=$(GDAL)/lib DYLD_LIBRARY_PATH=$(GDAL)/lib $(GDAL)/bin/ogr2ogr -f KML $@ MillstoneTrails/Trails_polyline.shp)
 	rm -r MillstoneTrails
 
 BarreForestGuide.sqlite: MillstoneTrails.kml kml_to_sqlite.pl
