@@ -6,7 +6,7 @@ use XML::XPath;
 use DBI;
 
 my $kmlfile = "MillstoneTrails.kml";
-my $dbfile = "BarreTrailGuide.sqlite";
+my $dbfile = "BarreForestGuide.sqlite";
 #my $dbschema = "BarreTrailGuide.schema.sql";
 
 if (@ARGV) { $kmlfile = shift(@ARGV); }
@@ -45,7 +45,7 @@ my $ins_trail_sth =
     $dbh->prepare("insert into trail (id,difficulty_id,uses_id,meters) " .
                     "values (?,?,?,?)");
 my $ins_coords_sth =
-    $dbh->prepare("insert into coordinate (trail_id,seq,lattitude,longitude) " .
+    $dbh->prepare("insert into coordinate (trail_id,seq,longitude,lattitude) " .
                     "values (?,?,?,?)");
 
 printf("Parsing trails from XML and inserting into database...\n");
