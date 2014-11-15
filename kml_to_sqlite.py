@@ -18,7 +18,7 @@ kml_directory = ''
 kml_file = 'MillstoneTrails.kml'
 
 db_directory = ''
-db_file = 'bfg.sqlite'
+db_file = 'BarreForestGuide.sqlite'
 
 # KML
 kmldoc = minidom.parse(kml_directory + kml_file)
