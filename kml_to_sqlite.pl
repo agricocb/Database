@@ -118,7 +118,7 @@ foreach my $poi (
 {
   printf("Inserting POI \"%s\"\n", $poi->{name});
   if (!defined($types{$poi->{type}})) {
-    $ins_uses_sth->execute($poi->{type});
+    $ins_poi_type_sth->execute($poi->{type});
     $types{$poi->{type}} = $dbh->last_insert_id(undef, undef, undef, undef);
   }
   $ins_map_obj_sth->execute($poi->{name});
