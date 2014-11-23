@@ -124,7 +124,7 @@ foreach my $poi (
   $ins_map_obj_sth->execute($poi->{name});
   $poi->{id} = $dbh->last_insert_id(undef, undef, undef, undef);
   $ins_poi_sth->execute($poi->{id}, $types{$poi->{type}});
-  $ins_coords_sth->execute($poi->{id}, 0, $poi->{lat}, $poi->{lon});
+  $ins_coords_sth->execute($poi->{id}, 0, $poi->{lon}, $poi->{lat});
 }
 $dbh->commit();
 $dbh->{AutoCommit} = 1;
