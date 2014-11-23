@@ -26,8 +26,7 @@ while (@schema) { $dbh->do(shift(@schema)) || die $dbh->errstr; }
 $dbh->{AutoCommit} = 1;
 printf("Done.\n");
 
-printf("Caching difficulty and uses ID values... ");
-my %difficulty;
+printf("Caching uses ID values... ");
 my %uses;
 my $uses_query = "select id,english_uses from trail_uses;";
 foreach my $uses (@{$dbh->selectall_arrayref($uses_query)}) {
@@ -43,8 +42,8 @@ my $ins_trail_sth =
     $dbh->prepare("insert into trail (id,summer_uses_id,winter_uses_id,meters)".
                     " values (?,?,?,?)");
 my $ins_coords_sth =
-    $dbh->prepare("insert into coordinate (trail_id,seq,longitude,lattitude) " .
-                    "values (?,?,?,?)");
+    $dbh->prepare("insert into coordinate " .
+                    "(map_object_id,seq,longitude,lattitude) values (?,?,?,?)");
 
 printf("Parsing trails from XML and inserting into database...\n");
 my %fn = ( summer_type => "TRAILTYPES",
@@ -87,8 +86,49 @@ foreach my $pm ($k->findnodes("/kml/Document/Folder/Placemark")) {
   if (++$inserts%100==0) { $dbh->commit(); }
 }
 $dbh->commit();
-printf("Done.\n");
 $dbh->{AutoCommit} = 1;
+printf("Done.\n");
+
+printf("Caching POI type ID values... ");
+my %types;
+my $types_query = "select id,english_poi_type from poi_type;";
+foreach my $type (@{$dbh->selectall_arrayref($types_query)}) {
+  $types{$type->[1]} = $type->[0];
+}
+printf("Done.\n");
+
+my $ins_poi_type_sth =
+    $dbh->prepare("insert into poi_type (english_poi_type) values (?)");
+$ins_map_obj_sth =
+    $dbh->prepare("insert into map_object (name) values (?)");
+my $ins_poi_sth =
+    $dbh->prepare("insert into point_of_interest (id,type_id) values (?,?)");
+
+printf("Inserting POIs into database...\n");
+$dbh->{AutoCommit} = 0;
+foreach my $poi (
+  { name=>"MTA Shop",                        type=>"Store",       lat=>44.159882, lon=>-72.470772 },
+  { name=>"Lawson's Store",                  type=>"Store",       lat=>44.159483, lon=>-72.470880 },
+  { name=>"South View",                      type=>"Overlook",    lat=>44.136259, lon=>-72.491225 },
+  { name=>"Grand Lookout",                   type=>"Overlook",    lat=>44.161278, lon=>-72.476250 },
+  { name=>"Brook St. Parking Lot",           type=>"Parking Lot", lat=>44.157065, lon=>-72.469682 },
+  { name=>"Little John Parking Lot",         type=>"Parking Lot", lat=>44.155471, lon=>-72.462611 },
+  { name=>"Barclay Quarry Road Parking Lot", type=>"Parking Lot", lat=>44.144973, lon=>-72.475652 },
+)
+{
+  printf("Inserting POI \"%s\"\n", $poi->{name});
+  if (!defined($types{$poi->{type}})) {
+    $ins_uses_sth->execute($poi->{type});
+    $types{$poi->{type}} = $dbh->last_insert_id(undef, undef, undef, undef);
+  }
+  $ins_map_obj_sth->execute($poi->{name});
+  $poi->{id} = $dbh->last_insert_id(undef, undef, undef, undef);
+  $ins_poi_sth->execute($poi->{id}, $types{$poi->{type}});
+  $ins_coords_sth->execute($poi->{id}, 0, $poi->{lat}, $poi->{lon});
+}
+$dbh->commit();
+$dbh->{AutoCommit} = 1;
+printf("Done.\n");
 
 __DATA__
 
@@ -114,10 +154,22 @@ create table trail (
   foreign key (winter_uses_id)  references trail_uses       (id)
 );
 
+create table poi_type (
+  id                  integer     primary key autoincrement,
+  english_poi_type    varchar
+);
+
+create table point_of_interest (
+  id                  int,
+  type_id             int,
+  foreign key (id)              references map_object       (id),
+  foreign key (type_id)         references poi_type         (id)
+);
+
 create table coordinate (
-  trail_id            int,
+  map_object_id       int,
   seq                 int,
   lattitude           double,
   longitude           double,
-  foreign key (trail_id) references trails(id)
+  foreign key (map_object_id)   references map_object       (id)
 );
