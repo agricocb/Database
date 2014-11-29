@@ -100,20 +100,23 @@ printf("Done.\n");
 my $ins_poi_type_sth =
     $dbh->prepare("insert into poi_type (english_poi_type) values (?)");
 $ins_map_obj_sth =
-    $dbh->prepare("insert into map_object (name) values (?)");
+    $dbh->prepare("insert into map_object (name,url) values (?,?)");
 my $ins_poi_sth =
     $dbh->prepare("insert into point_of_interest (id,type_id) values (?,?)");
 
 printf("Inserting POIs into database...\n");
 $dbh->{AutoCommit} = 0;
+my $url_base="https://raw.githubusercontent.com/BarreForestGuide/trail_images/master/";
 foreach my $poi (
-  { name=>"MTA Shop",                        type=>"Store",       lat=>44.159882, lon=>-72.470772 },
-  { name=>"Lawson's Store",                  type=>"Store",       lat=>44.159483, lon=>-72.470880 },
-  { name=>"South View",                      type=>"Overlook",    lat=>44.136259, lon=>-72.491225 },
-  { name=>"Grand Lookout",                   type=>"Overlook",    lat=>44.161278, lon=>-72.476250 },
-  { name=>"Brook St. Parking Lot",           type=>"Parking Lot", lat=>44.157065, lon=>-72.469682 },
-  { name=>"Little John Parking Lot",         type=>"Parking Lot", lat=>44.155471, lon=>-72.462611 },
-  { name=>"Barclay Quarry Road Parking Lot", type=>"Parking Lot", lat=>44.144973, lon=>-72.475652 },
+  { name=>"MTA Shop",                        type=>"Store",           lat=>44.159882, lon=>-72.470772 }, # No longer include this
+  { name=>"Lawson's Store",                  type=>"Store",           lat=>44.159483, lon=>-72.470880 },
+  { name=>"South View",                      type=>"Overlook",        lat=>44.136259, lon=>-72.491225 },
+  { name=>"Grand Lookout",                   type=>"Overlook",        lat=>44.161278, lon=>-72.476250, url=>"millstone sign grand lookout2.jpg" },
+  { name=>"Brook St. Parking Lot",           type=>"Parking Lot",     lat=>44.157065, lon=>-72.469682 },
+  { name=>"Little John Parking Lot",         type=>"Parking Lot",     lat=>44.155471, lon=>-72.462611 }, # No longer include this
+  { name=>"Barclay Quarry Road Parking Lot", type=>"Parking Lot",     lat=>44.144973, lon=>-72.475652 },
+  { name=>"Littlejohn & Milne Quarry",       type=>"Historical Sign", lat=>44.153975, lon=>-72.460692, url=>"millstone -2014- littlejohn & Milne2.jpg" },
+  { name=>"The Couture/Wheeler Farm",        type=>"Historical Sign", lat=>44.159102, lon=>-72.467794, url=>"millstone couture wheeler farm 20142.jpg" },
 )
 {
   printf("Inserting POI \"%s\"\n", $poi->{name});
@@ -121,7 +124,7 @@ foreach my $poi (
     $ins_poi_type_sth->execute($poi->{type});
     $types{$poi->{type}} = $dbh->last_insert_id(undef, undef, undef, undef);
   }
-  $ins_map_obj_sth->execute($poi->{name});
+  $ins_map_obj_sth->execute($poi->{name}, $poi->{url});
   $poi->{id} = $dbh->last_insert_id(undef, undef, undef, undef);
   $ins_poi_sth->execute($poi->{id}, $types{$poi->{type}});
   $ins_coords_sth->execute($poi->{id}, 0, $poi->{lon}, $poi->{lat});

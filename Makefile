@@ -43,7 +43,7 @@ MillstoneTrails.kml: MillstoneTrailsData.zip $(GDAL)/bin/ogr2ogr
 	rm -r MillstoneTrails
 
 BarreForestGuide.sqlite: MillstoneTrails.kml kml_to_sqlite.pl
-	python ./kml_to_sqlite.py
+	./kml_to_sqlite.pl
 
 clean:
 	rm -f gdal-1.11.1.tar.gz
