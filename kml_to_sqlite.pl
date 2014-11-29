@@ -124,7 +124,7 @@ foreach my $poi (
     $ins_poi_type_sth->execute($poi->{type});
     $types{$poi->{type}} = $dbh->last_insert_id(undef, undef, undef, undef);
   }
-  $ins_map_obj_sth->execute($poi->{name}, $poi->{url});
+  $ins_map_obj_sth->execute($poi->{name}, defined($poi->{url})?$url_base.$poi->{url}:undef);
   $poi->{id} = $dbh->last_insert_id(undef, undef, undef, undef);
   $ins_poi_sth->execute($poi->{id}, $types{$poi->{type}});
   $ins_coords_sth->execute($poi->{id}, 0, $poi->{lon}, $poi->{lat});
