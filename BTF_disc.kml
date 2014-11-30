@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="BTF_disc" id="BTF_disc">
+	<SimpleField name="Id" type="int"></SimpleField>
+	<SimpleField name="hole" type="int"></SimpleField>
+</Schema>
+<Folder><name>BTF_disc</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.469032738535063,44.156636644521505 -72.468877375298874,44.156097802176497</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.468504925419609,44.155978597953904 -72.467754159002467,44.155977397926151</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">3</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.467387205782131,44.156129924554961 -72.46750059570266,44.155770863181154 -72.467516261667058,44.155721254867359 -72.46754304756918,44.155666541966688 -72.467579456950801,44.155618927296231 -72.467652249521848,44.155571322921233 -72.467755712369694,44.15552133135953 -72.467913518987714,44.15547599137674</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.468149218899825,44.155617604691685 -72.468855618648504,44.155850184670399</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">5</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.469392798490503,44.155501618079377 -72.4687319120507,44.15544723141133</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">6</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.468324172192084,44.155369711413371 -72.467527925825763,44.15492500482258</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">7</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.46749616581549,44.15525550476368 -72.467154793137482,44.155069716504187 -72.466928264514806,44.15490436546856 -72.46683869939028,44.154861898134797 -72.466723229726014,44.154847155913046 -72.466610767077057,44.154859029353887 -72.466248986248971,44.154923184768585</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">8</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.466234606263356,44.154752598127168 -72.466065586402948,44.153488178355282</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">9</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.465302979987072,44.153596684989793 -72.46489178845647,44.153279744565076 -72.464716580686044,44.153134434250298 -72.464621993587912,44.153012398995465 -72.464554677583678,44.152865302710552 -72.464525012110684,44.152696224637602 -72.464522280310277,44.152637271807095 -72.464544932113412,44.152570024482074 -72.464689150470377,44.152276676178332</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.465172813522656,44.151426300037393 -72.465561144548516,44.151124915362921 -72.465624018175205,44.151065402990412 -72.46569123337143,44.150974452182375 -72.465706804495198,44.150886833942067 -72.465692133395009,44.150693478920424</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">11</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.465794266709594,44.150451385632977 -72.466725499718024,44.150630858954557</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">12</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.467160686202348,44.151227005532533 -72.467047992870974,44.151738152093877</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">13</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.467084926100384,44.153214238508866 -72.466869480355058,44.153561322863155 -72.466674198421529,44.15381367869746 -72.466565088141351,44.153920558394795</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">14</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.467302359243632,44.15477389150746 -72.46755674754047,44.154809295643247 -72.467801499243805,44.154818889888602 -72.46791726136297,44.154821303706782 -72.467994639009291,44.154807378186206 -72.468066128289593,44.154768957897957 -72.468132305664767,44.154718970109862 -72.468397332225862,44.154518131580758</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">15</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.468450485552793,44.154389578283215 -72.468707974025946,44.154416710375763 -72.468770805291129,44.154438158826551 -72.468840240336689,44.154481040302308 -72.469038217056038,44.154616427437205 -72.469243632530251,44.154719274699701 -72.469326308207087,44.15474310943533 -72.469640258462164,44.154801831579292</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">16</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.470282367239733,44.154374268240595 -72.470523655484101,44.154476013553371 -72.471036344746778,44.15464592448145 -72.471157551286481,44.154675511611771 -72.471238082429807,44.15468883796337 -72.471620497795115,44.154704551615502</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">17</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.471655904402141,44.155436431482606 -72.471396458006097,44.155486596697429 -72.470826258004948,44.155584951437127</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">18</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.469815242441172,44.155879096183831 -72.469798620712496,44.156043398061371 -72.469782054790713,44.156098162436614 -72.469758872421039,44.156155306307916 -72.469722454720653,44.156221971667804 -72.46966287148129,44.156312443367696 -72.469613225567386,44.156374342677218 -72.46945941172666,44.156566771200623</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.469812184992051,44.155879964688566 -72.469739130255746,44.155952894808571 -72.469659701746252,44.156043361252806 -72.469603429857543,44.15612669005322 -72.469563700725047,44.156200498232316 -72.469523959237577,44.156298118894938 -72.46950738931163,44.156360026977204 -72.469487512962502,44.156419552923268 -72.46945941172666,44.156566771200623</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#BTF_disc">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="hole">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-72.468983927708862,44.155727453541068 -72.468734792997367,44.155474513435635</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

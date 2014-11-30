@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Teebox_long" id="Teebox_long">
+	<SimpleField name="Id" type="int"></SimpleField>
+</Schema>
+<Folder><name>Teebox_long</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.470271703414952,44.154376453003685</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.46844545638902,44.154388308827023</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.467296338962413,44.15477687320395</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.467510420323137,44.155264586881287</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.467074284432556,44.153215086273661</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.467152553903162,44.151221287717775</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.465798395696496,44.150449287574773</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.465129094441906,44.151436736778948</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.46529930159852,44.153591102915605</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.466224601430724,44.15476421574683</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.468324883580081,44.155394444763118</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.468118986829751,44.155616608908403</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.467381323669343,44.156147262914466</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.468556071430399,44.155980926236708</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.469801934349334,44.155859973767406</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.469021299328176,44.156653890307354</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.471625879596402,44.155420003563378</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Teebox_long">
+		<SimpleData name="Id">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.469452285689115,44.155506530883088</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

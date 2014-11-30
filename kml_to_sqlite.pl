@@ -6,10 +6,12 @@ use XML::XPath;
 use DBI;
 
 my $kmlfile = "MillstoneTrails.kml";
+my $discgolfkmlfile = "BTF_disc.kml";
 my $dbfile = "BarreForestGuide.sqlite";
 #my $dbschema = "BarreTrailGuide.schema.sql";
 
 if (@ARGV) { $kmlfile = shift(@ARGV); }
+if (@ARGV) { $discgolfkmlfile = shift(@ARGV); }
 if (@ARGV) { $dbfile = shift(@ARGV); }
 
 unlink($dbfile);
@@ -43,7 +45,7 @@ my $ins_trail_sth =
                     " values (?,?,?,?)");
 my $ins_coords_sth =
     $dbh->prepare("insert into coordinate " .
-                    "(map_object_id,seq,longitude,lattitude) values (?,?,?,?)");
+                    "(map_object_id,seq,longitude,latitude) values (?,?,?,?)");
 
 printf("Parsing trails from XML and inserting into database...\n");
 my %fn = ( summer_type => "TRAILTYPES",
@@ -133,6 +135,41 @@ $dbh->commit();
 $dbh->{AutoCommit} = 1;
 printf("Done.\n");
 
+$ins_map_obj_sth =
+    $dbh->prepare("insert into map_object (name) values (?)");
+my $ins_disc_golf_hole_sth =
+    $dbh->prepare("insert into disc_golf_hole (id,hole) values (?,?)");
+
+printf("Parsing disc golf holes from XML and inserting into database...\n");
+%fn = ( hole => "hole" );
+$k=new XML::XPath(filename=>$discgolfkmlfile);
+$dbh->{AutoCommit} = 0;
+foreach my $pm ($k->findnodes("/kml/Document/Folder/Placemark")) {
+  my $pmd={};
+  my $sd=$pm->find("./ExtendedData/SchemaData")->[0];
+  foreach my $fn(keys(%fn)) {
+    $pmd->{$fn} =
+      $sd->find("SimpleData[\@name=\"".$fn{$fn}."\"]")->string_value;
+  }
+  if ($pmd->{hole} == 0) { next; }
+  $pmd->{name} = "The Quaries Disc Golf Hole ".$pmd->{hole};
+  my $co=$pm->find("./LineString/coordinates")->string_value;
+  $co=[map([split(/,/,$_)],split(/\s+/,$co))];
+  $pmd->{coords}=$co;
+  printf("Inserting disc golf hole %d\n", $pmd->{hole});
+  $ins_map_obj_sth->execute($pmd->{name});
+  $pmd->{id} = $dbh->last_insert_id(undef, undef, undef, undef);
+  $ins_disc_golf_hole_sth->execute($pmd->{id}, $pmd->{hole});
+  my $seq=1;
+  foreach my $waypoint (@$co) {
+    $ins_coords_sth->execute($pmd->{id}, $seq++,
+                             $waypoint->[0], $waypoint->[1]);
+  }
+}
+$dbh->commit();
+$dbh->{AutoCommit} = 1;
+printf("Done.\n");
+
 __DATA__
 
 create table map_object (
@@ -157,6 +194,12 @@ create table trail (
   foreign key (winter_uses_id)  references trail_uses       (id)
 );
 
+create table disc_golf_hole (
+  id                  int,
+  hole                int,
+  foreign key (id)              references map_object       (id)
+);
+
 create table poi_type (
   id                  integer     primary key autoincrement,
   english_poi_type    varchar
@@ -172,7 +215,7 @@ create table point_of_interest (
 create table coordinate (
   map_object_id       int,
   seq                 int,
-  lattitude           double,
+  latitude            double,
   longitude           double,
   foreign key (map_object_id)   references map_object       (id)
 );
